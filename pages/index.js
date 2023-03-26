@@ -34,7 +34,9 @@ function Home() {
         on edits made to your React components, without ever losing component
         state.
         This is my Project
+
       </p>
+      This one also
       <hr className={styles.hr} />
       <div>
         <p>
