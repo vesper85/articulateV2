@@ -13,7 +13,7 @@ function AllPosts(props) {
         </p>
         <div className={blogStyles.blog_title}>
           {/*<MDXRemote {...title}/>*/}
-          <Link href={`/blog/${slug}`} >{name}</Link>
+          <Link href={`/posts/${slug}`} >{name}</Link>
         </div>
       </div>
     </div>

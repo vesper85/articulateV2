@@ -4,7 +4,7 @@ export default {
       title: 'Blog Template',
     fields: [
       {
-        name: 'name',
+        name: 'title',
         type: 'string',
         title: 'Title',
         description: 'Enter Blog Title here'
@@ -16,13 +16,19 @@ export default {
         description: 'slug of a post goes here'
       },
       {
+        name: 'date',
+        type: 'date',
+        title: 'Date',
+        description: 'Created at'
+      },
+      {
         name: 'faceimage',
         type: 'image',
         title: 'Image',
         description: 'Add Face Image here'
       },
       {
-        name: 'MDXBOX',
+        name: 'mdx_playground',
         type: 'markdown',
         title: 'MDX',
         description: 'Add mdx here'

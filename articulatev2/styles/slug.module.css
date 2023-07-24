@@ -1,5 +1,6 @@
 .wrapper {
-  @apply text-white md:w-[45rem] block my-0 mx-auto;
+  /* @apply text-white md:w-[45rem] block my-0 mx-auto; */
+  @apply  md:w-[45rem] block my-0 mx-auto;
 }
 
 :global(.light) .wrapper {
@@ -29,5 +30,6 @@
   /*color: white;*/
   /*line-height: 1rem;*/
   /*margin-bottom: 5rem;*/
-  @apply mb-20 dark:text-white;
+  /* @apply mb-20 dark:text-white; */
+  @apply mb-20;
 }
