@@ -1,0 +1,56 @@
+/* 3 breakpoint */
+/* 
+mobile phones
+sm:
+md:
+*/
+
+.inside_wrapper {
+  @apply w-full max-w-[45rem] relative;
+}
+/*
+.outside_wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}*/
+
+/* BLOG HEADER */
+.BlogHeader {
+  @apply m-4;
+}
+/* .BlogHeader p {
+  @apply dark:text-white text-sm md:text-base lg:text-lg;
+} */
+.BlogHeader p {
+  @apply text-sm md:text-base lg:text-lg;
+}
+.header_title {
+  @apply text-[2rem] md:text-[3rem] font-semibold;
+}
+
+/* .header_title span {
+  @apply dark:text-white;
+} */
+
+/* SEARCH IN BLOG SECTION */
+
+/* BLOG WRAPPER */
+.blog_wrapper {
+  @apply flex flex-col  md:flex-row md:items-start mt-[2rem];
+}
+/*.blog_wrapper:hover .blog_title a {
+  @apply text-color-primary;
+}*/
+.blog_title {
+  @apply flex-[5_1_0%] text-xl md:text-[1.2rem] md:ml-4 capitalize;
+}
+.blog_title a {
+  @apply hover:text-color-primary ease-in duration-200 text-xl md:text-[1.6rem] font-medium sm:font-semibold m-auto;
+}
+/* .timestamp {
+  @apply text-[0.9rem] sm:text-base flex-1 text-color-gray-700 dark:text-color-text md:m-auto;
+} */
+.timestamp {
+  @apply text-[0.9rem] sm:text-base flex-1 text-color-gray-700 md:m-auto;
+}

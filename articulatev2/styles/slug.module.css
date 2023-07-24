@@ -1,0 +1,33 @@
+.wrapper {
+  @apply text-white md:w-[45rem] block my-0 mx-auto;
+}
+
+:global(.light) .wrapper {
+  @apply text-black;
+}
+
+/*.innerWrapper {
+}*/
+.heading_wrapper {
+  /*@apply mdtext-5xl;*/
+  margin: 2rem 0;
+  font-size: 3rem;
+}
+.heading_wrapper h1 {
+  font-size: 3rem;
+}
+
+.blog_info {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0rem;
+  color: grey;
+  margin-bottom: 2rem;
+}
+
+.blog_content {
+  /*color: white;*/
+  /*line-height: 1rem;*/
+  /*margin-bottom: 5rem;*/
+  @apply mb-20 dark:text-white;
+}
