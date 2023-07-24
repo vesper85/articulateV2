@@ -1,6 +1,8 @@
 'use client'
 import { createClient } from "next-sanity"
 import { usePathname } from 'next/navigation' 
+import { Suspense, useState } from "react"
+
 import useSWR from 'swr'
 
 const client = createClient({
@@ -10,33 +12,43 @@ const client = createClient({
     useCdn: false
   })
 
-const fetcher = async(...args) =>{
-    const {slugP} = args
-    const data = await client.fetch(`*[_type == "testblog"] && slug == ${slugP}`)
-    return data
-
-}
 
 
 
-async function fetchPost(){
+// async function fetchPost(){
+//     const path = usePathname();
+//     const slugP = path.split('/')[2]
+//     console.log(slugP)
+//     const data  = useAsync(()=> client.fetch(`*[_type == "testblog"] && slug == ${slugP}`))
+//     return data
+// }
+
+const fetcher = (path) => fetch(`${path}`).then(res => res.json())
+
+
+export default function Post(){
+    const [post, setPost] = useState({name: "parikshit"});
     const path = usePathname();
     const slugP = path.split('/')[2]
-    console.log(slugP)
-    // const post = await client.fetch(`*[_type == "testblog" && slug == ${slugP}]`)
+    // console.log(slugP);
     const api = `https://v3dbl7rx.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type+%3D%3D+%22testblog%22+%26%26+slug+%3D%3D%22${slugP}%22%5D`
-    const {data, error} = useSWR(slugP,{cache: true})
-    return data
-}
-
-
-export default async function Post(){
-    
-    const data = await fetchPost();
-    return(
-        <div>
-            {data.name}
-        </div>
-    )
-
+    // console.log(api);
+    const {data, error, isloading} = useSWR(api,fetcher)
+    if(isloading){
+        return <div> loading... </div>
+    }
+    else if(error){
+        return <div>error</div>
+    }
+    else{
+        console.log(data);
+        return (
+            <div>
+                <div>
+                    {/* {data.result[0].name} */}
+                    "data"
+                </div>
+            </div>
+        )
+    }
 }
